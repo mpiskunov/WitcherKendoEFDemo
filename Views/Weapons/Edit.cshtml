@@ -1,0 +1,44 @@
+﻿@model WitcherKendoEFDemo.Models.Weapon
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+    <h4>Weapon</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" id="WeaponForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="WeaponID" />
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="k-textbox" />
+                    <span asp-validation-for="Name" class="text-danger k-invalid-msg" data-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AttackPower"></label>
+                    <kendo-numerictextbox for="AttackPower" />
+                    <span asp-validation-for="AttackPower" class="text-danger k-invalid-msg" data-for="AttackPower"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="k-button k-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="k-button">Back to List</a>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#WeaponForm").kendoValidator({
+                // You can define your custom rules here:
+                //rules: {}
+            });
+        })
+    </script>

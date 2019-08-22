@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WitcherKendoEFDemo.Models.Character>
+
+@{
+    ViewData["Title"] = "Battle";
+}
+
+<h1>Battle!</h1>
+
+<table class="table battle-table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttackPower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefensePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weapon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.Kendo().CheckBox().Name("checkboxLeft" + item.CharacterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttackPower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefensePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weapon.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<table class="table battle-table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttackPower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefensePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weapon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.Kendo().CheckBox().Name("checkboxLeft" + item.CharacterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttackPower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefensePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weapon.Name)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

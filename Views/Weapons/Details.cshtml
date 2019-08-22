@@ -1,0 +1,30 @@
+﻿@model WitcherKendoEFDemo.Models.Weapon
+b4
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Weapon</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AttackPower)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AttackPower)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WeaponID" class="k-button k-primary">Edit</a> |
+    <a asp-action="Index" class="k-button">Back to List</a>
+</div>
