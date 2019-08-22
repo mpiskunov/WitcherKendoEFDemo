@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WitcherKendoEFDemo.Models;
 
 namespace WitcherKendoEFDemo.Migrations
 {
     [DbContext(typeof(WitcherKendoEFDemoContext))]
-    partial class WitcherKendoEFDemoContextModelSnapshot : ModelSnapshot
+    [Migration("20190822123114_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

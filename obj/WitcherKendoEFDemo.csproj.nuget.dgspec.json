@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duffl\\Desktop\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj": {}
+    "C:\\Users\\Mpiskunov\\Desktop\\node_projects\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duffl\\Desktop\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj": {
+    "C:\\Users\\Mpiskunov\\Desktop\\node_projects\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duffl\\Desktop\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj",
+        "projectUniqueName": "C:\\Users\\Mpiskunov\\Desktop\\node_projects\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj",
         "projectName": "WitcherKendoEFDemo",
-        "projectPath": "C:\\Users\\duffl\\Desktop\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj",
-        "packagesPath": "C:\\Users\\duffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duffl\\Desktop\\WitcherKendoEFDemo\\obj\\",
+        "projectPath": "C:\\Users\\Mpiskunov\\Desktop\\node_projects\\WitcherKendoEFDemo\\WitcherKendoEFDemo.csproj",
+        "packagesPath": "C:\\Users\\Mpiskunov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mpiskunov\\Desktop\\node_projects\\WitcherKendoEFDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\duffl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mpiskunov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {}
+          "https://nuget.telerik.com/nuget": {},
+          "https://worldstrides-explorica.pkgs.visualstudio.com/_packaging/ExploricaProductionNuGetFeed@Release/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {

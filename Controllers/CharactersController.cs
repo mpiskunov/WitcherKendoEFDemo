@@ -162,5 +162,10 @@ namespace WitcherKendoEFDemo.Controllers
             return View(await witcherKendoEFDemoContext.ToListAsync());
         }
 
+        public JsonResult Characters_Read()
+        {
+
+            return Json(_context.Character.ToList());
+        }
     }
 }

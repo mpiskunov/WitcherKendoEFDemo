@@ -41,9 +41,6 @@ namespace WitcherKendoEFDemo
             services.AddDbContext<WitcherKendoEFDemoContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WitcherKendoEFDemoContext")));
 
-            services.AddDbContext<WitcherKendoEFDemoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WitcherKendoEFDemoContext")));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
