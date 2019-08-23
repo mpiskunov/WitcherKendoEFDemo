@@ -16,6 +16,7 @@ namespace WitcherKendoEFDemo.Models
         public string Name { get; set; }
 
         [Required]
+        [Display()]
         [Range(0, 15, ErrorMessage = "Attack Range must be between 0 - 15!")]
         public int AttackPower { get; set; }
 

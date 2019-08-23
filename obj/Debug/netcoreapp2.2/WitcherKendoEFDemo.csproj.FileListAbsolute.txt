@@ -80,3 +80,4 @@ C:\Users\Mpiskunov\Desktop\node_projects\WitcherKendoEFDemo\obj\Debug\netcoreapp
 C:\Users\Mpiskunov\Desktop\node_projects\WitcherKendoEFDemo\obj\Debug\netcoreapp2.2\WitcherKendoEFDemo.dll
 C:\Users\Mpiskunov\Desktop\node_projects\WitcherKendoEFDemo\obj\Debug\netcoreapp2.2\WitcherKendoEFDemo.pdb
 C:\Users\Mpiskunov\Desktop\node_projects\WitcherKendoEFDemo\obj\Debug\netcoreapp2.2\WitcherKendoEFDemo.csproj.CopyComplete
+C:\Users\duffl\Desktop\WitcherKendoEFDemo\obj\Debug\netcoreapp2.2\Razor\Views\Characters\Results.g.cshtml.cs

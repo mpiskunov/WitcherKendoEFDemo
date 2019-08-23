@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WitcherKendoEFDemo.Models.Character>
+﻿@model WitcherKendoEFDemo.Models.BigCharacterWeaponModel
 
 @{
     ViewData["Title"] = "Battle";
@@ -6,53 +6,36 @@
 
 <h1>Battle!</h1>
 <div>
-    @using (@Html.BeginForm("Action", "Battle", FormMethod.Post))
-    {
-        @(Html.Kendo()
-        .DropDownList()
-        .Name("ddlCharacters")
-        .DataTextField("Name")
-        .DataValueField("CharacterID")
-        .DataSource(source =>
-        {
-            source.Read(read =>
-            {
-                read.Action("Characters_Read", "Characters");
-            });
-        }))
-        @(Html.Kendo()
-            .DropDownList()
-            .Name("ddlCharacters2")
-            .DataTextField("Name")
-            .DataValueField("CharacterID")
-            .DataSource(source =>
-                    {
-                source.Read(read =>
-                        {
-                    read.Action("Characters_Read", "Characters");
-                });
-            })
-        )
-        @Html.Kendo().Button().Name("btn_SubmitBattle").Content("Submit");
-        <script>
-            $("#btn_SubmitBattle").click(function (e) {
-                console.log(e);
-                e.preventDefault();
-                alert("yes");
-            });
-        </script>
-    }
-
+    <form method="post" asp-route="BattleSubmit">
+        <kendo-dropdownlist name="ddlCharacters1" datatextfield="Name" datavaluefield="CharacterID">
+            <datasource>
+                <transport>
+                    <read url="@Url.Action("Characters_Read", "Characters")" />
+                </transport>
+            </datasource>
+        </kendo-dropdownlist>
+        <kendo-dropdownlist name="ddlCharacters2" datatextfield="Name" datavaluefield="CharacterID">
+            <datasource>
+                <transport>
+                    <read url="@Url.Action("Characters_Read", "Characters")" />
+                </transport>
+            </datasource>
+        </kendo-dropdownlist>
+        <button id="btnSubmit" class="k-button k-primary">Who will win?</button>
+    </form>
 </div>
+
+<ul>
+    @foreach (var item in Model.Characters)
+    {
+        <li>
+            @item.Name
+        </li>
+        <li>
+            @item.Weapon.Name
+        </li>
+    }
+</ul>
+
 <script>
-    $(function () {
-        //Notice that the Name() of the DropDownList is used to get its client-side instance.
-        var dropdownlist = $("#ddlCharacters").data("kendoDropDownList");
-        var button = $("#btn_SubmitBattle").data("kendoButton");
-        console.log(dropdownlist);
-        console.log(button);
-        $("#ddlCharacters").change(function (e) {
-            console.log(e.target.value);
-        });
-    });
 </script>

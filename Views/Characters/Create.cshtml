@@ -19,12 +19,12 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="AttackPower"></label>
-                            <kendo-numerictextbox for="AttackPower" />
+                            <kendo-numerictextbox for="AttackPower" format="{0:n0}"/>
                             <span asp-validation-for="AttackPower" class="text-danger k-invalid-msg" data-for="AttackPower"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="DefensePower"></label>
-                            <kendo-numerictextbox for="DefensePower" />
+                            <kendo-numerictextbox for="DefensePower"  format="{0:n0}"/>
                             <span asp-validation-for="DefensePower" class="text-danger k-invalid-msg" data-for="DefensePower"></span>
                         </div>
                         <div class="form-group">

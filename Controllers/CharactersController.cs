@@ -25,7 +25,6 @@ namespace WitcherKendoEFDemo.Controllers
             return View(await witcherKendoEFDemoContext.ToListAsync());
         }
 
-        // GET: Characters/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -150,21 +149,59 @@ namespace WitcherKendoEFDemo.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        /// <summary>
+        /// Boolean that determines if a character exists.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool CharacterExists(int id)
         {
             return _context.Character.Any(e => e.CharacterID == id);
         }
-
+        /// <summary>
+        /// Routes to the battle page as well as showing a "Big" View Model in order to bring in more than one model.
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Battle()
         {
-            var witcherKendoEFDemoContext = _context.Character.Include(c => c.Weapon);
-            return View(await witcherKendoEFDemoContext.ToListAsync());
+            // Two models wrapped in a "Big" View model.
+            BigCharacterWeaponModel bigCharacterWeaponModel = new BigCharacterWeaponModel();
+            bigCharacterWeaponModel.Characters = await _context.Character.ToListAsync();
+            bigCharacterWeaponModel.Weapons = await _context.Weapon.ToListAsync();
+            return View(bigCharacterWeaponModel);
+        }
+        /// <summary>
+        /// Once a battle is submitted, logic is done to determine the winner.
+        /// </summary>
+        /// <param name="ddlCharacters1"></param>
+        /// <param name="ddlCharacters2"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("/Results", Name = "BattleSubmit")]
+        public async Task<IActionResult> Results( int ddlCharacters1, int ddlCharacters2)
+        {
+            if(ddlCharacters1 == ddlCharacters2)
+            {
+                ViewBag.BattleResults = "You can't battle yourself.. Can you?";
+                return View();
+            }
+
+            var char1 = await _context.Character.Include(c => c.Weapon)
+                .FirstOrDefaultAsync(m => m.CharacterID == ddlCharacters1);
+            var char2 = await _context.Character.Include(c => c.Weapon)
+                .FirstOrDefaultAsync(m => m.CharacterID == ddlCharacters2);
+
+            if (char1.Weapon.AttackPower + char1.AttackPower > char2.DefensePower)
+                ViewBag.BattleResults = $"{char1.Name} has defeated {char2.Name} with the mighty weapon, {char1.Weapon.Name}!";
+            return View();
         }
 
+        /// <summary>
+        /// Returns a JSON object with all the Characters.
+        /// </summary>
+        /// <returns></returns>
         public JsonResult Characters_Read()
         {
-
             return Json(_context.Character.ToList());
         }
     }
